@@ -1,24 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { HiMenu } from "react-icons/hi";
+import NavLinks from "../Components/NavLinks";
+import { useState } from "react";
+import { HiOutlineXMark } from "react-icons/hi2";
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  function onToggle() {
+    setIsOpen((open) => !open);
+  }
   return (
-    <ul className="hidden items-center space-x-10 uppercase md:flex font-thin ">
-      <li className="tracking-tighter hover:text-slate-500 md:flex">
-        <NavLink to="/"> Home</NavLink>
-      </li>
-      <li className="tracking-widest hover:text-slate-400 md:flex">
-        <NavLink to="/about"> About</NavLink>
-      </li>
-      <li className="tracking-widest hover:text-slate-400 md:flex">
-        <NavLink to="/stack">Stack </NavLink>
-      </li>
-      <li className="tracking-widest hover:text-slate-400 md:flex">
-        <NavLink to="/project">Projects</NavLink>
-      </li>
-      <li className=" hover:text-slate-600 md:flex px-3 py-1 lg:py2 lg:px-4 text-stone-900 bg-slate-50 border-2 border-stone-400 rounded-lg shadow-md font-semibold tracking-tight ">
-        <NavLink to="/contact">Contacts </NavLink>
-      </li>
-    </ul>
+    <div>
+      <nav>
+        <div className="hidden  md:flex justify-between gap-4 items-center font-thin uppercase">
+          <NavLinks />
+        </div>
+        <div>
+          <button
+            onClick={() => onToggle()}
+            className="block md:hidden text-2xl z-[999999]"
+          >
+            {isOpen ? <HiMenu /> : <HiOutlineXMark />}
+          </button>
+        </div>
+      </nav>
+
+      {!isOpen && (
+        <nav className="fixed z-[20] top-[6rem] left-0 flex flex-col w-full h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest item-center md:hidden divide-y divide-gray-500  text-center bg-neutral-900">
+          {<NavLinks />}
+        </nav>
+      )}
+    </div>
   );
 }
 

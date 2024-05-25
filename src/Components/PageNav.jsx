@@ -3,12 +3,10 @@ import NavBar from "../ui/NavBar";
 
 function PageNav() {
   return (
-    <nav className=" container relative mx-auto p-6">
-      <div className="flex items-center justify-between  space-x-20 my-4">
-        <Logo />
-        <NavBar />
-      </div>
-    </nav>
+    <header className=" sticky top-0 z-[20] mx-auto w-full flex items-center justify-between p-8 h-[6rem]  gap-[2rem] bg-black md:bg-transparent border-b-1">
+      <Logo />
+      <NavBar />
+    </header>
   );
 }
 

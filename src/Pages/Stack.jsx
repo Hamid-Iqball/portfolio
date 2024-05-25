@@ -12,7 +12,7 @@ function Stack() {
       <h1 className="my-20 text-center lg:my-10  lg:text-4xl text-2xl ">
         Technologies I've <span className="text-slate-400">Worked With</span>{" "}
       </h1>
-      <p className="m-20 lg:mx-20 lg:my-10 text-center text-xl font-thin ">
+      <p className="mt-20 mb-20 mr-8 ml-8 lg:mx-20 lg:my-10 text-center p text-xl font-thin ">
         {" "}
         The follwing stack allows me to develop scalable, efficient and user
         friendly web applications that meet modern standards.Chnage is
